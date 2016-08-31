@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class ContactInfo {
 
-	private ArrayList<String> emails;
+	private String email;
 	
-	private ArrayList<String> phoneNumber;
+	private ArrayList<String> Telephones;
 	
 	public ContactInfo(){
 		

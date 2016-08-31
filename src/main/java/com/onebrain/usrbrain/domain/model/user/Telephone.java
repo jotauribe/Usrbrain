@@ -37,8 +37,8 @@ public class Telephone {
 	
 	public boolean equals(Object anObjet){
 		
-		if(anObjet.getClass() == this.getClass())
-			if(((Telephone)anObjet).number == this.number)
+		if(anObjet != null && anObjet.getClass() == this.getClass())
+			if(((Telephone)anObjet).number().equals(this.number()))
 				return true;
 		
 		return false;
