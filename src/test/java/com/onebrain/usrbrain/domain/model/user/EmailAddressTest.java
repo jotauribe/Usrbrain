@@ -1,4 +1,4 @@
-package com.onebrain.usrbrain;
+package com.onebrain.usrbrain.domain.model.user;
 
 import com.onebrain.usrbrain.domain.model.user.EmailAddress;
 import org.junit.Before;
@@ -20,7 +20,7 @@ public class EmailAddressTest {
     }
 
     @Test
-    public void equalsWithSameValueObjectTest(){
+    public void equalsWithSameAddressValue(){
         assertEquals(emailOne, emailTwo);
 
 
