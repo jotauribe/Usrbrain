@@ -43,5 +43,14 @@ public class FullName {
 		return new FullName(this.name, lastname);
 		
 	}
+
+	public boolean equals(Object anObject){
+		if(anObject != null && anObject.getClass() == this.getClass())
+			if(((FullName)anObject).name().equals(this.name())
+					&& ((FullName)anObject).lastname().equals(this.lastname()))
+				return true;
+
+		return false;
+	}
 	
 }

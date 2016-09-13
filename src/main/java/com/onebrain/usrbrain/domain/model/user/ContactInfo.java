@@ -4,12 +4,25 @@ import java.util.ArrayList;
 
 public class ContactInfo {
 
-	private String email;
+	private EmailAddress email;
 	
-	private ArrayList<String> Telephones;
+	private Telephone telephone;
 	
-	public ContactInfo(){
-		
+	public ContactInfo(EmailAddress email, Telephone telephone){
+		this.email = email;
+		this.telephone = telephone;
 	}
-	
+
+	public Telephone telephone(){
+		return this.telephone;
+	}
+
+	public EmailAddress emailAddress(){
+		return this.email;
+	}
+
+	public ContactInfo changeEmailAddress(String anAddress){
+		//TODO
+		return null;
+	}
 }

@@ -9,7 +9,12 @@ public class Telephone {
 	private String identifier;
 	
 	private String number;
-	
+
+	public Telephone(String number){
+		this.identifier = "defaultIdentifier";
+		this.number = number;
+	}
+
 	public Telephone(String number, String identifier){
 		
 		this.identifier = identifier;
@@ -35,10 +40,10 @@ public class Telephone {
 		
 	}
 	
-	public boolean equals(Object anObjet){
+	public boolean equals(Object anObject){
 		
-		if(anObjet != null && anObjet.getClass() == this.getClass())
-			if(((Telephone)anObjet).number().equals(this.number()))
+		if(anObject != null && anObject.getClass() == this.getClass())
+			if(((Telephone)anObject).number().equals(this.number()))
 				return true;
 		
 		return false;
