@@ -30,4 +30,14 @@ public class EmailAddress extends AlwaysValidEntity {
 		
 	}
 
+	public boolean equals(Object anObject){
+        boolean equalObjects = false;
+		if(anObject != null && anObject.getClass() == this.getClass()){
+            EmailAddress typedObject = (EmailAddress) anObject;
+            equalObjects = this.address().equals(typedObject.address());
+
+		}
+		return equalObjects;
+	}
+
 }
