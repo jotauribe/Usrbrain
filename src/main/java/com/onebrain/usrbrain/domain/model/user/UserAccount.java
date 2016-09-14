@@ -1,59 +1,54 @@
 package com.onebrain.usrbrain.domain.model.user;
 
+import com.onebrain.common.AlwaysValidEntity;
+
 import java.util.Date;
 
-import com.onebrain.common.Identity;
-
-public class UserAccount {
+public class UserAccount extends AlwaysValidEntity{
 	
 	private UserId id;
 	
-	private String nickname;
-	
-	private FullName fullName;
-	
-	private String email;
-	
-	private Date birthday;
-	
-	private String password;
+	private String userName;
+
+	private String passwordHash;
+
+	private String passwordSalt;
+
+	private Person person;
 	
 	private Date createdOn;
 	
-	private Date updatedOn;
+	private Date lastUpdate;
 	
 	public UserAccount( UserId id, 
-						String nickname, 
-						FullName fullName,  
-						String email, 
-						Date birthday, 
+						String userName,
 						String password) {
 		
-		this.id = id;
-		this.nickname = nickname;
-		this.fullName = fullName;
-		this.email = email;
-		this.birthday = birthday;
-		this.password = password;
-		
-	}
-	
-	public UserId id(){
-		
-		return this.id;
-		
-	}
-	
-	public String email(){
-		
-		return this.email;
+		this.setId(id);
+		this.setUserName(userName);
+		this.setPasswordHash(password);
+		this.createdOn = new Date();
 		
 	}
 
-	public void editEmail(String email){
-		
-		this.email = email;
-		
+	protected void setId(UserId id){
+		assertArgumentNotNull(id, "An id is required");
+		this.id = id;
+	}
+
+	protected void setUserName(String userName){
+		assertArgumentNotNull(userName, "An id is required");
+		this.userName = userName;
+	}
+
+	protected void setPasswordHash(String passwordHash){
+		assertArgumentNotNull(passwordHash, "A password is required");
+		assertArgumentLength(passwordHash, 6, 32, "Password lenght must to be between 6 and 35 characters");
+		this.passwordHash = passwordHash;
+	}
+
+	public UserId id(){
+		return this.id;
 	}
 	
 	public void changeFullname(String name, String lastname){

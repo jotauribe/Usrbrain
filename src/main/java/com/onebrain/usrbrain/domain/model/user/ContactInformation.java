@@ -2,13 +2,13 @@ package com.onebrain.usrbrain.domain.model.user;
 
 import java.util.ArrayList;
 
-public class ContactInfo {
+public class ContactInformation {
 
 	private EmailAddress email;
 	
 	private Telephone telephone;
 	
-	public ContactInfo(EmailAddress email, Telephone telephone){
+	public ContactInformation(EmailAddress email, Telephone telephone){
 		this.email = email;
 		this.telephone = telephone;
 	}
@@ -21,8 +21,7 @@ public class ContactInfo {
 		return this.email;
 	}
 
-	public ContactInfo changeEmailAddress(String anAddress){
-		//TODO
-		return null;
+	public ContactInformation changeEmailAddress(EmailAddress anAddress){
+		return new ContactInformation(anAddress, this.telephone());
 	}
 }

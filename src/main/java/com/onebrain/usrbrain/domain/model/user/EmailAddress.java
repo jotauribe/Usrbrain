@@ -40,4 +40,14 @@ public class EmailAddress extends AlwaysValidEntity {
 		return equalObjects;
 	}
 
+    public EmailAddress changeAddress(String anAddress){
+        return new EmailAddress(anAddress);
+    }
+
+    @Override
+    public String toString() {
+        return "EmailAddress{" +
+                "address='" + address + '\'' +
+                '}';
+    }
 }
